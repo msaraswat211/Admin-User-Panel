@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Session;
 
-class AdminController extends Controller
+class AdminUsersController extends Controller
 {
     /**
      * Display a listing of the resource.

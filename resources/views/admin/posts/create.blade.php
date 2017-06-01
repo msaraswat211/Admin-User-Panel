@@ -3,12 +3,12 @@
 
 @section('content')
 
-    @include('includes.tinyeditor')
-
+    {{--@include('includes.tinyeditor')--}}
 
     <h1>Create Post</h1>
 
     <div class="row">
+
          {!! Form::open(['method'=>'POST', 'action'=> 'AdminPostsController@store', 'files'=>true]) !!}
 
            <div class="form-group">
@@ -18,7 +18,7 @@
 
             <div class="form-group">
                 {!! Form::label('category_id', 'Category:') !!}
-                {!! Form::select('category_id', [''=>'Choose Categories'] + $categories, null, ['class'=>'form-control'])!!}
+                {!! Form::select('category_id', ['1'=>'Choose Categories'] , null, ['class'=>'form-control'])!!}
             </div>
 
 
@@ -44,13 +44,10 @@
 
     </div>
 
-
+    {{--display error--}}
     <div class="row">
 
-
         @include('includes.form_error')
-
-
 
     </div>
 

@@ -54,4 +54,11 @@ class User extends Authenticatable
     public function getNameAttribute($value){
         return ucwords($value);
     }
+
+    /*
+     * relationship with post one to many
+     */
+    public function posts(){
+        return $this->hasMany('App\Post');
+    }
 }

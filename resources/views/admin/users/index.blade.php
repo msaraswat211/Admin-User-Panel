@@ -1,9 +1,5 @@
 @extends('layouts.admin')
 
-
-
-
-
 @section('content')
 
     {{-- check session of deleted user and show flash msg--}}
@@ -13,10 +9,9 @@
 
         @endif
 
-
     <h1>Users</h1>
 
-
+    {{--all user in table form--}}
     <table class="table">
        <thead>
          <tr>
@@ -34,9 +29,7 @@
 
         @if($users)
 
-
             @foreach($users as $user)
-
 
            <tr>
               <td>{{$user->id}}</td>
@@ -51,12 +44,9 @@
 
             @endforeach
 
-
           @endif
-
 
        </tbody>
      </table>
 
-
-@stop
+@endsection
