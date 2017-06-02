@@ -2,8 +2,9 @@
 
 @section('content')
 
-    @include('includes.tinyeditor')
+    {{--@include('includes.tinyeditor')--}}
 
+{{--edit post--}}
 
 <h1>Edit Post</h1>
     
@@ -26,7 +27,7 @@
 
         <div class="form-group">
             {!! Form::label('category_id', 'Category:') !!}
-            {!! Form::select('category_id',  $categories, null, ['class'=>'form-control'])!!}
+            {!! Form::select('category_id',  $cate, null, ['class'=>'form-control'])!!}
         </div>
 
 
