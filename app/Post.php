@@ -32,6 +32,6 @@ class Post extends Model
      * relation with catagory model
      */
     public function category(){
-        return $this->belongsTo('App\Catagory');
+        return $this->belongsTo('App\Category');
     }
 }

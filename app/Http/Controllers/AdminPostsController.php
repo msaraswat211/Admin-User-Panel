@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PostsCreateRequest;
 use App\Photo;
 use App\Post;
+use App\Category;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -21,7 +22,8 @@ class AdminPostsController extends Controller
     {
         // display all posts
         $posts=Post::all();
-        return view('admin.posts.index',compact('posts'));
+        $cate=Category::all();
+        return view('admin.posts.index',compact('posts', 'cate'));
     }
 
     /**
@@ -31,8 +33,9 @@ class AdminPostsController extends Controller
      */
     public function create()
     {
-        // create new post
-        return view('admin.posts.create');
+        // return to create new post page
+        $cate=Category::lists('name', 'id')->all();
+        return view('admin.posts.create', compact('cate'));
     }
 
     /**
