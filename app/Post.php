@@ -34,4 +34,11 @@ class Post extends Model
     public function category(){
         return $this->belongsTo('App\Category');
     }
+
+    /*
+     * post relationship with comment
+     */
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
 }

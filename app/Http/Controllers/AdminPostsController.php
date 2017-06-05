@@ -126,4 +126,13 @@ class AdminPostsController extends Controller
         $post->delete();
         return redirect('/admin/posts');
     }
+
+    /*
+     * function for post page data
+     */
+    public function post($id){
+        $post=Post::findOrFail($id);
+        $comments=$post->comments()->whereIsActive(1)->get();
+        return view('post', compact('post', 'comments'));
+    }
 }
