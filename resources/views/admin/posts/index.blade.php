@@ -51,7 +51,7 @@
     <div class="row">
         <div class="col-sm-6 col-sm-offset-5">
 
-            {{--{{$posts->render()}}--}}
+            {{ $posts->links()}}
 
         </div>
     </div>

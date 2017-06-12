@@ -21,7 +21,7 @@ class AdminPostsController extends Controller
     public function index()
     {
         // display all posts
-        $posts=Post::all();
+        $posts=Post::paginate(10);
         $cate=Category::all();
         return view('admin.posts.index',compact('posts', 'cate'));
     }

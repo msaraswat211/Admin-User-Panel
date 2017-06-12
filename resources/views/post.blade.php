@@ -23,12 +23,12 @@
         <hr>
 
         <!-- Preview Image -->
-        <img class="img-responsive" src="{{ $post->photo->file }}" alt="">
+        <img class="img-responsive" src="{{ $post->photo ? $post->photo->file : $post->photoPlaceholder() }}" alt="">
 
         <hr>
 
         <!-- Post Content -->
-        <p>{{ $post->body }}</p>
+        <p>{!! $post->body !!}</p>
 
         <hr>
 
@@ -85,21 +85,25 @@
 
             @if(count($comment->replies) >0)
 
-                @foreach($comment->replies as $replires)
+                @foreach($comment->replies as $replies)
+
+                    @if($replies->is_active==1)
 
             <!-- Nested Comment -->
                 <div class="media">
                     <a class="pull-left" href="#">
-                        <img height="64" class="media-object" src="{{ $replires->photo }}" alt="">
+                        <img height="64" class="media-object" src="{{ $replies->photo }}" alt="">
                     </a>
                     <div class="media-body">
-                        <h4 class="media-heading">{{ $replires->author }}
-                            <small>{{ $replires->created_at->diffForHumans() }}</small>
+                        <h4 class="media-heading">{{ $replies->author }}
+                            <small>{{ $replies->created_at->diffForHumans() }}</small>
                         </h4>
-                        {{ $replires->body }}
+                        {{ $replies->body }}
                     </div>
                 </div>
                 <!-- End Nested Comment -->
+
+            @endif
 
             @endforeach
 

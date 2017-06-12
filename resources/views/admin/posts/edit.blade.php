@@ -2,7 +2,7 @@
 
 @section('content')
 
-    {{--@include('includes.tinyeditor')--}}
+    @include('includes.tinyeditor')
 
 {{--edit post--}}
 
